@@ -1,5 +1,4 @@
 $(function () {
-
     var btn = $('.btn-primary'),
         liLast = btn.parent(),
         find = $('.nav-tabs').html(),
