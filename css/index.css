@@ -1,0 +1,89 @@
+body{
+    font-size: 12px;
+    color:#333;
+  font-family: "Microsoft YaHei";
+  background-color: #e6e6e6;
+}
+a,a:hover{
+    color:#333;
+    text-decoration: none;
+}
+.active a{
+    background-color: honeydew;
+}
+ul,ol{
+    list-style: none;
+}
+.col-sm-3 {
+    background-color: blanchedalmond;
+}
+.row>.nav{
+    background-color: #FF3030;
+    border-radius: 10px;
+    /*border: 1px dashed cadetblue;*/
+    box-shadow: 0 0 10px 5px cadetblue;
+}
+.nav-tabs a{
+font-size: 16px;
+}
+.tab-content ul{
+    background-color: 	#FAFAFA;
+    border-radius: 10px;
+}
+.close {
+    display: inline-block;
+    color: red;
+    opacity: 1;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    margin: 20px 20px -20px 20px;
+}
+#bgc{
+    margin: 20px;
+}
+button[class="btn btn-default dropdown-toggle"]{
+     padding: 0 ;
+    border: 1px solid transparent;
+    border-radius: 4px;
+        border-color: transparent;
+}
+.nav-tabs {
+     border-bottom: transparent;
+}
+.btn-primary {
+margin: 14px;
+}
+#btn-var {
+position: relative;
+ display: none;
+}
+        .loading{
+            width: 80px;
+            height: 30px;
+            border-radius: 5px;
+            background: url("../images/loading.gif") center center no-repeat;
+            background-color: rgba(0,0,0,0.5);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            display: none;
+        }
+/*h5 span[class="badge"]{
+        background-color: darkturquoise;
+}*/
+.nav-tabs>li>a {
+    text-align: center;
+    height: 30px;
+    line-height: 15px;
+    /*width: 100%;*/
+    margin-right: 2px;
+    border: 1px solid transparent;
+}
+.delete{
+    position: relative;
+    min-height: 1px;
+    padding-right: 0;
+    left: 15px;
+}

@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- 设置网页编码 -->
+    <meta charset="utf-8">
+    <!-- 如果是ie浏览器，使用最新IE渲染引擎来解析页面  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动端适口设置 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>笔记</title>
+
+    <!-- Bootstrap 引入核心css文件 -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--  为了让低版本浏览器支持html5语义标签 和 css3的媒体查询-->
+    <!--[if lt IE 9]>-->
+    <script src="lib/html5shiv/html5shiv.min.js"></script>
+    <script src="lib/respond/respond.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+            <h3 class="pull-left">全部笔记</h3>
+            <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#btn-var">增加页面</button>
+            <button type="button" id="bgc" class="btn btn-info" width='50px' height='30px'>百变背景</button>
+
+
+            <div id="btn-var"  class="modal fade  bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <!--<button type="button" class=" close btn btn-primary " data-dismiss="alert" aria-label="Close"> X-->
+                <!--</button>-->
+                <!--<form class="form-horizontal" action="javascript:;" id='form' autocomplete="off">-->
+                    <!--<div class="form-group pull-right">-->
+                        <!--<label for="exampleInputName2" class="col-sm-2 control-label">Name</label>-->
+                        <!--<input name="name" type="text" class="form-control col-xs-12" id="exampleInputName2"-->
+                               <!--placeholder="Jane Doe" autofocus>-->
+                        <!--<button type="button" class="btn col-xs-3 btn-warning pull-right" id="save">确定</button>-->
+
+                    <!--</div>-->
+                <!--</form>-->
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">增加内容</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal" id='form'>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="name" class="form-control" id="exampleInputName2" placeholder="title"  placeholder="Jane Doe" autofocus>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="save">确认增加</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 nav">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active col-md-2 col-sm-12"><a href="#nav1" data-toggle="tab">ajax</a></li>
+                <li class="col-sm-12 col-md-2"><a href="#nav2" data-toggle="tab">入门</a></li>
+                <li class="col-sm-12 col-md-2"><a href="#nav3" data-toggle="tab">HTML5</a></li>
+                <li class="col-sm-12 col-md-2"><a href="#nav4" data-toggle="tab">JS基础</a></li>
+                <li class="col-sm-12 col-md-2"><a href="#nav5" data-toggle="tab">JQuery</a></li>
+                <li class="col-sm-12 col-md-2"><a href="#nav6" data-toggle="tab">web</a></li>
+                <li class="col-sm-12 col-md-2"><a href="#nav7" data-toggle="tab">面向对象</a></li>
+                <li class="col-sm-12 col-md-2"><a href="#nav8" data-toggle="tab">canvas</a></li>
+            </ul>
+
+        </div>
+        <!-- Tab panes -->
+        <div class="col-xs-12">
+            <div class="tab-content">
+                <!--  .............      ajax笔记     ................      -->
+                <div class="tab-pane active" id="nav1">
+                    <!--  .............  模态框       ................     -->
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal"
+                            data-target="#myModal">
+                        增加知识点
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade  bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">增加内容</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">标题</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" placeholder="title">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">内容</label>
+                                            <span class="glyphicon-asterisk glyphicon glyphicon-plus "></span>
+
+                                            <div class="col-sm-10 add-input">
+                                                <input type="text" class="form-control" placeholder="1">
+                                                <input type="text" class="form-control" placeholder="2">
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="button" class="btn btn-primary">确认增加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+
+
+                    <div>
+                        <h5>php常用方法 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>$arr=array(1,2,3,4);</li>
+                            <li>var_dump()：输出详细信息，如对象、数组（了解</li>
+                            <li>echo：输出简单数据类型，如字符串、数值</li>
+                            <li> in_array() 是否在数组中</li>
+                            <li>count() 计算数组长度</li>
+                            <li>array_key_exists ()检测数组中是否存在key</li>
+                            <li>file_get_contents读取文件</li>
+                            <li>move_upload_file() 移动上传文件</li>
+                            <li>json_encode() 编码 数组转换json字符串</li>
+                            <li>json_decode() 解码 json字符串转换php对象</li>
+                            <li>JSON.stringify() js对象 转换json字符串</li>
+                            <li>JSON.parse() json字符串 转换js对象</li>
+                            <li>header('Access-Control-Allow-Origin:http://www.study.com');</li>
+                            <li>允许某服务器访问此服务器</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5>表单处理 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>$_GET接收 get 传值</li>
+                            <li>$_POST接收 post 传值</li>
+                            <li>$_FILES接收文件上传</li>
+                            <li>name 属性的是用来提供给服务端接收所传递数据而设置的</li>
+                            <li>action属性设置接收数据的处理程序</li>
+                            <li>method属性设置发送数据的方式 get post</li>
+                            <li>当上传文件是需要设置 enctype="multipart/form-data"，且只能post方式</li>
+                            <li>var formData=new FormData(form); 创建管理form表单对象</li>
+
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5>模板引擎 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>ArtTemplate：https://github.com/aui/artTemplate</li>
+                            <li>
+                                <div>
+                                    9.3artTemplate </h6>
+                                    <ul>
+                                        <li>1、引入template-native.js</li>
+                                        <li>1、引入template-native.js</li>
+                                        <li>1、引入template-native.js</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>template('tmp',info)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>请求头 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>Host：localhost请求的主机</li>
+                            <li>Cache-Control：max-age=0控制缓存</li>
+                            <li>Accept：*/* 接受的文档MIME类型</li>
+                            <li>User-Agent：很重要</li>
+                            <li>Referer：从哪个URL跳转过来的</li>
+                            <li>Accept-Encoding：可接受的压缩格式</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>XMLHttpRequest对象详解 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>var xhr= new XMLHttpRequest 实例化对象</li>
+                            <li>xhr.open() 发起请求方式和路劲</li>
+                            <li>xhr.send() 发送请求主体 get方式使用xhr.send(null)</li>
+                            <li>xhr.setRequestHeader() 设置请求头</li>
+                            <li>xhr.onreadystatechange = function () {} 监听响应状态</li>
+                            <li>403没有权限、404未找到、500服务器错误</li>
+                            <li>xhr.statusText表示响应信息，如OK</li>
+                            <li>xhr.getAllResponseHeaders() 获取全部响应头信息</li>
+                            <li>xhr.getResponseHeader('key') 获取指定头信息</li>
+                            <li>xhr.responseText 响应的内容</li>
+                            <li>xhr.timeout 设置超时</li>
+                            <li>xhr.ontimeout 监听超时</li>
+                            <li>xhr.upload.onprogress 监听上传进度
+                                <ul>
+                                    <li>e.loaded 已上传</li>
+                                    <li>e.total</li>
+                                </ul>
+                            </li>
+                            <li>页面跳转：
+                                <ul>
+                                    <li>header('location:http://www.baidu.com'); 直接跳转</li>
+                                    <li>header('refresh:3;url="./01.html"'); 定时跳转</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2"
+                                            data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="true">
+                                        asynchronous 异部
+                                        <span class="glyphicon glyphicon-pushpin"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+
+                                        <li> 异步任务指的是，不进入主线程、而进入”任务队列”（task queue）的任务</li>
+                                        <li> 执行的属顺序和书写顺序无关 其优势在 于不阻塞程 序的执行， 从而提升 整体 执行 效率。</li>
+                                    </ul>
+                                </div>
+                                <ul>
+                                    <li>xhr.readyState = 0时，UNSENT open尚未调用</li>
+                                    <li>xhr.readyState = 1时，OPENED open已调用</li>
+                                    <li>xhr.readyState = 2时，HEADERS_RECEIVED 接收到头信息</li>
+                                    <li>xhr.readyState = 3时，LOADING 接收到响应主体</li>
+                                    <li>xhr.readyState = 4时，DONE 响应完成</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                            data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="true">
+                                        synchronous 同步
+                                        <span class="glyphicon glyphicon-pushpin"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+                                        <li>同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务</li>
+
+                                    </ul>
+                                </div>
+                            </li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>7.1常见协议 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>1、HTTP、HTTPS 超文本传输协议</li>
+                            <li>2、FTP 文件传输协议</li>
+                            <li>3、SMTP 简单邮件传输协议</li>
+
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> Ajax请求 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>$('form').serialize() 序列化表单（即格式化key=val&key=val）</li>
+                            <li>type 请求方式
+                                <ul>
+                                    <li>$.get() 以GET方式发起Ajax请求</li>
+                                    <li>$.post() 以POST方式发起Ajax请求</li>
+                                </ul>
+                            </li>
+                            <li>url 接口地址</li>
+                            <li>data 发送请求数据
+                                <ul>
+                                    <li>pageNum 页码</li>
+                                    <li>pageSize 行</li>
+                                </ul>
+                            </li>
+                            <li>timeout 请求超时</li>
+                            <li>beforeSend: function () {} 请求发起前调用</li>
+                            <li>success 成功响应后调用</li>
+                            <li>complete 响应完成时调用（包括成功和失败）</li>
+                            <li>error 错误响应时调用</li>
+
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>GET和POST请求方式的区别 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>1、GET没有请求主体 xhr.send(null)</li>
+                            <li>2、GET可以通过在请求URL上添加请求参数</li>
+                            <li>3、POST可以通过请求主体发送数据 xhr.send('name=itcast&age=10')</li>
+                            <li>4、POST需要设置请头部 Content-Type:application/x-www-form-urlencoded</li>
+                            <li>5、GET效率更好（应用多）</li>
+                            <li>6、GET大小限制约4K，POST则没有限制</li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <!--      ......          基础班笔记        .......             -->
+                <div class="tab-pane" id="nav2">
+                    <!--  .............  模态框       ................     -->
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal"
+                            data-target="#myModa2">
+                        增加知识点
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade  bs-example-modal-lg" id="myModa2" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">增加内容</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">标题</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" placeholder="title">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">内容</label>
+                                            <span class="glyphicon-asterisk glyphicon glyphicon-plus"></span>
+
+                                            <div class="col-sm-10 add-input">
+                                                <input type="text" class="form-control" placeholder="1">
+                                                <input type="text" class="form-control" placeholder="2">
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="button" class="btn btn-primary">确认增加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <div>
+                        <h5>head中的标签 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>&lt;!-- 注释-- &gt;</li>
+                            <li>meta charset="utf-8" 解释当前编码格式
+                                <ul>
+                                    <li>gb22312 标准字符集</li>
+                                    <li>gbk 简体中文</li>
+                                    <li>utf-8 繁体中文</li>
+                                </ul>
+                            </li>
+                            <li>&lt; title页面标题/title &gt;
+                            <li/>
+                            <li>&lt;link rel="dns-prefetch" href="网址" &gt; dns预解析
+                            <li/>
+                            <li>&lt;link rel="shortcut icon" href="网址" &gt; 引入网站小图标
+                            <li/>
+
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>图片标签 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>&lt;img src="图片的地址” alt="图片名称”titlle=“图片描叙”&gt;</li>
+                            <li>../ 返回上级路径</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>a标签 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>&lt;a href="#" title="描叙"&gt;</li>
+                            <li>a href="#top" id="top" 跳转到元素</li>
+                            <li>a target="_blank" 设定跳转新窗口打开</li>
+                            <li>a target="_self" 在当前页面跳转</li>
+                            <li>base target="_blank" 用于统一跳转</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>列表标签 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>ul>li 无须列表</li>
+                            <li>ol>li 有序列表</li>
+                            <li>dl>dt dd dd 自定义列表</li>
+                            <li>ul>li>ul>li 列表嵌套</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>文字标签 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>h1-h6标题标签</li>
+                            <li>&lt;hr&gt;文字分隔线</li>
+                            <li>br换行</li>
+                            <li>p分段分行</li>
+                            <li>b strong 加粗关键字</li>
+                            <li>em l 红色斜体关键字</li>
+                            <li>u ins下划线</li>
+                            <li>del s删除文字</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>节标签 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>div 块标签</li>
+                            <li>span 行级标签</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>行内标签 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>strong em del ins s i b
+                            </li>
+                            <li>
+                                h1~h6 p div ul ol li
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>表格标签 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>table
+                                <ul>
+                                    <li>caption 表格标题</li>
+                                    <li>thead 列名 tr>th
+                                    </li>
+                                    <li>tbody 列单 tr>td
+                                        <ul>
+                                            <li>&lt;td rowspan="2"&gt; 一个单元格占用两行显示</li>
+                                            <li>&lt;td colspan="2"&gt; 将一行中的一个单元格占用两列</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>&lt;table border="1"&gt; 边框
+                            <li>cellspacing 边框的间距</li>
+                            <li>cellpadding 边框和内容的间距</li>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>表单标签 form actiom="#"<span class="badge">14</span></h5>
+                        <ul>
+                            <li>文本框
+                                <ul>
+                                    <li>input type="text" value="文本内容"</li>
+                                    <li>placeholder="设置提示"</li>
+                                    <li>inpt type="password" 密码框</li>
+                                    <li>"button" 按钮</li>
+                                    <li>"submit" 提交按钮</li>
+                                    <li>"reset"重置表单</li>
+                                    <li>"image" 图片按钮scr=""</li>
+                                </ul>
+                            </li>
+                            <li>选择框
+                                <ul>
+                                    <li>input type="radio" checked name="gender"</li>
+                                    <li>checked 默认选中 name设置单选框 radio 单选框</li>
+                                </ul>
+                            </li>
+
+                            <li>select 下拉列表框
+                                <ul>
+                                    <li>multiple 下拉列表</li>
+                                    <li>option selected="true" selected="true" 默认选项</li>
+                                    <li>selected="selected" 默认选择一个 option</li>
+                                </ul>
+                            </li>
+                            <li>文本域 &lt;textarea cols="值” rows="值”内容&gt;</li>
+                            <li>多选框 &lt;input type="checkbox"&gt;</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>position 定位 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>static 静态位置</li>
+                            <li>relative: 相对定位</li>
+                            <li>absolute: 绝对定位</li>
+                            <li>fixed: 固定定位</li>
+                            <li>vertical-align 图片位置设置
+                                <ul>
+                                    <li>baseline 默认值</li>
+                                    <li>middle 中标对齐</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>清除浮动 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>给父元素设置高
+
+                            </li>
+                            <li>clear:both; 加个子元素</li>
+                            <li>overflow:hidden; 给父元素</li>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="clearfix2"
+                                        data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="true">
+                                    <span class="glyphicon glyphicon-pushpin"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="clearfix2">
+                                    <li>.clearfix:after{</li>
+                                    <li>content:"";</li>
+                                    <li>display:block;</li>
+                                    <li>clear:both;</li>
+                                    <li>cisibility:hidden;</li>
+                                    <li>height:0;</li>
+                                    <li>line-height:0;</li>
+                                    <li>}</li>
+
+
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>background <span class="badge">14</span></h5>
+                        <ul>
+                            <li>-image:url()</li>
+                            <li>-repeat: 平铺</li>
+                            <li>-position:位置</li>
+                            <li>-attachment 随鼠标滚动 scroll 滚动 fixed 不滚动</li>
+                            <li>size: cover 背景图片缩放</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>display <span class="badge">14</span></h5>
+                        <ul>
+                            <li>display:none 删除标签</li>
+                            <li>display:block 块级元素</li>
+                            <li>auto 滚动条</li>
+                            <li>display:inline 行内元素的标签</li>
+                            <li>display:inline-block 显示内联块</li>
+                            <li>visibility:hidden; 可见性为隐藏</li>
+
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>a <span class="badge">14</span></h5>
+                        <ul>
+                            <li>a:link{} 未访问的链接</li>
+                            <li>a:visited{} 被访问的链接</li>
+                            <li>a:hover{} 鼠标停悬的元素</li>
+                            <li>a:active{} 被激活的元素</li>
+                            <li>cursor: 鼠标样式
+                                <ul>
+                                    <li>auto 默认</li>
+                                    <li>url 自定义光标</li>
+                                    <li>pointer 一只手</li>
+                                    <li>default 默认箭头</li>
+                                </ul>
+                            </li>
+                            <li>：foucus{} 获得焦点</li>
+
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>字体 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>font-weight：字体加粗 normal 不粗 400 normal 700 bold</li>
+                            <li>font:bold 16px/40px "microsoft yahei";</li>
+                            <li>font-style:字体风格 normal 默认值 italic 显示斜体 oblique 斜体显示 font-size 大小
+                            </li>
+                            <li>font-family: “用编码代替字体”，“Lucida Console”;</li>
+                            <li>letter-spacing:10px;字符间距</li>
+                            <li>word-spacing:30px; 字符间距</li>
+                            <li>line-height: 设置行高 3em； 3个字体大小 % 50px;
+                            </li>
+                            <li> vertical-align: 文本对齐
+                                <ul>
+                                    <li>baseline： 将支持valign特性的对象的内容与基线对齐</li>
+                                    <li>sub： 垂直对齐文本的下标</li>
+                                    <li>super： 垂直对齐文本的上标</li>
+                                    <li>top： 将支持valign特性的对象的内容与对象顶端对齐</li>
+                                    <li>text-top： 将支持valign特性的对象的文本与对象顶端对齐</li>
+                                    <li>middle： 将支持valign特性的对象的内容与对象中部对齐</li>
+                                    <li>bottom： 将支持valign特性的对象的文本与对象底端对齐</li>
+                                    <li>text-bottom： 将支持valign特性的对象的文本与对象顶端对齐</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>清除浮动 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>给父元素设置高
+
+                            </li>
+                            <li>clear:both; 加个子元素</li>
+                            <li>overflow:hidden; 给父元素</li>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="clearfix"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="glyphicon glyphicon-pushpin"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="clearfix">
+                                    <li>.clearfix:after{</li>
+                                    <li>content:"";</li>
+                                    <li>display:block;</li>
+                                    <li>clear:both;</li>
+                                    <li>cisibility:hidden;</li>
+                                    <li>height:0;</li>
+                                    <li>line-height:0;</li>
+                                    <li>}</li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <div class="tab-pane" id="nav3">
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal"
+                            data-target="#myModa3">
+                        增加知识点
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade  bs-example-modal-lg" id="myModa3" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">增加内容</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">标题</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" placeholder="title">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">内容</label>
+                                            <span class="glyphicon-asterisk glyphicon glyphicon-plus"></span>
+
+                                            <div class="col-sm-10 add-input">
+                                                <input type="text" class="form-control" placeholder="1">
+                                                <input type="text" class="form-control" placeholder="2">
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="button" class="btn btn-primary">确认增加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <!--HTML5-->
+                    <div>
+                        <h5> 常用属性<span class="badge">14</span></h5>
+                        <ul>
+                            <li>box-shadow 边框阴影</li>
+                            <li> border-shadow:1px 1px 1px red , 文本阴影 : 1 阴影水平位移 2 阴影垂直位移 3 模糊程度 4 模糊大小 5 阴影颜色 内阴影 ；
+                            </li>
+                            <li> inset 内阴影</li>
+                            <li>E:target 表示 E元素被激活是的状态</li>
+                            <li> box-sizing:border-box 内减模式</li>
+                            <li> background-image:linear-gradient(right, #abc520,#c6c6c6); 颜色渐变</li>
+                            <li>background-image:radial-gradient 辐射半径 中心位置 起始颜色 终止颜色</li>
+                            <li>HSLA 颜色</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> 过渡(transition)<span class="badge">14</span></h5>
+                        <ul>
+                            <li>transition-property 设置过渡属性</li>
+                            <li>transition: all 1s; 过渡时间
+                                <ul>
+                                    <li> linear 线性匀速</li>
+                                    <li> ease-in-out　先加速 后减速</li>
+                                </ul>
+                            </li>
+
+                            <li>transition-duration 设置过渡时间</li>
+                            <li>transition-timing-function 运动曲线</li>
+                            <li>transition-delay :1s , 1s 设置过渡延时</li>
+                            <li>content:attr(data-text);</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>transform 变换 <span class="badge">14</span></h5>
+                        <ul>
+                            <li>scale(水平缩放比例，垂直缩放比例）</li>
+                            <li>移动 translate(x, y)
+                                <ul>
+                                    <li> translateX() 沿x轴位移</li>
+                                    <li> translateY() 沿Y轴位移</li>
+                                    <li> translateZ() 沿Z轴位移</li>
+                                </ul>
+                            </li>
+
+                            <li>旋转 rotate(deg)
+                                <ul>
+                                    <li> rotateX() 沿着x轴旋转</li>
+                                    <li> rotateY() 沿着y轴旋转</li>
+                                    <li> rotateZ() 沿着z轴旋转</li>
+                                </ul>
+                            </li>
+
+                            <li>透视 perspective：</li>
+                            <li> transform-style:preserve-3d; 3D效果</li>
+                            <li>扭曲 skew</li>
+                            <li>transform-origin： 设置变换中心</li>
+                            <li> backface-visibility: hidden; 背面隐藏</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> animation: 动画名称 持续时间 ； <span class="badge">14</span></h5>
+                        <ul>
+                            <li>动画名称： animation-name: move</li>
+                            <li>单次动画执行时间：animation-duration: 2s;</li>
+                            <li>重复次数 animation-iteration-count: 1;</li>
+                            <li> infinite 无数次</li>
+                            <li>动画方向：animation-direction
+                                <ul>
+                                    <li> alternate：交替</li>
+                                    <li> normal正常的</li>
+                                </ul>
+                            </li>
+
+                            <li>动画延迟：animation-delay: 1s;</li>
+                            <li>动画结束后的所保持的状态： animation-fill-mode:
+                                <ul>
+                                    <li> backwards；保持动画开始前的状态</li>
+                                    <li> forwards；保持动画结束后的状态</li>
+                                </ul>
+                            </li>
+
+                            <li> 运动曲线：animation-timing-function
+                                <ul>
+                                    <li> linear 匀速</li>
+                                    <li> ease-in-out :先加速后减速</li>
+                                    <li> steps(ｎ) 让动画分步完成</li>
+                                </ul>
+                            </li>
+
+                            <li>动画的播放状态 animation-play-state: paused;
+                                <ul>
+                                    <li> paused 暂停</li>
+                                    <li> running 运行</li>
+                                </ul>
+                            </li>
+
+                            <li>transitionend 过渡结束后持行</li>
+                            <li>animationend 动画结束后持行</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> background <span class="badge"></span></h5>
+                        <ul>
+                            <li>background-images
+                                <ul>
+                                    <li> : linear-gradient(方向，起始颜色，终止颜色);线性渐变</li>
+                                    <li> : radial-gradient( 辐射半径 中心点位置，起始颜色，终止颜色)径像渐变;</li>
+                                </ul>
+                            </li>
+
+                            <li>background-origin(原点，起点)
+                                <ul>
+                                    <li> content-box</li>
+                                    <li> paddding-box</li>
+                                    <li> border-box</li>
+                                </ul>
+                            </li>
+
+                            <li>background-size:600px,auto;
+                                <ul>
+                                    <li> cover 保证会铺满盒子，有可能不完全显示背景图片</li>
+                                    <li> contain 保证背景图片会完整的等比例的 包含在盒子中，有可能不会铺满盒子</li>
+                                </ul>
+                            </li>
+
+
+                            <li>background-position</li>
+                            <li> -x</li>
+                            <li> -Y</li>
+                            <li>background-clip
+                                <ul>
+                                    <li> border-box裁切边框以内为背景区域；</li>
+                                    <li> padding-box裁切内边距以内为背景区域；</li>
+                                    <li> content-box裁切内容区做为背景区域；</li>
+                                </ul>
+                            </li>
+
+                            <li> border-top-left-raudius : 水平半径 垂直半径；
+                                border-radius:水平半径/垂直半径 ；；
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>display:flex; 伸缩布局
+                            <san class="badge"></san>
+                        </h5>
+                        <ul>
+                            <li>flex-direction 调整主轴方向
+                                <ul>
+                                    <li> row 水平方向</li>
+                                    <li> row-reverse 反转</li>
+                                    <li> column 垂直方向</li>
+                                    <li> column-reverse 反转列</li>
+                                </ul>
+                            </li>
+
+                            <li>justify-content 主轴对齐方式
+                                <ul>
+                                    <li> flex-start、 起点对齐</li>
+                                    <li> flex-end、 终点对齐</li>
+                                    <li> center 中间对齐</li>
+                                    <li> space-around、 等分环绕</li>
+                                    <li> space-between 两端对齐</li>
+                                </ul>
+                            </li>
+
+                            <li>align-items 对齐方式
+                                <ul>
+                                    <li> Stretch: 拉伸</li>
+                                    <li>flex-wrap 控制是否换行</li>
+                                </ul>
+                            </li>
+
+                            <li> Wrap：换行</li>
+                            <li> Nowrap：不换行</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>伪元素<span class="badge"></span></h5>
+                        <ul>
+                            <li>:first-child(-n+5 ) 选择前五项</li>
+                            <li>:nth-child(27) 第27个元素</li>
+                            <li>E:nth-last-child(n) 其父元素的第n个子元素（倒着数）</li>
+                            <li>E:last-child 其父元素的最后1个子元素</li>
+                            <li>:first-letter 第一个字</li>
+                            <li>:first- line 第一行字</li>
+                            <li>::after 后面加标签</li>
+                            <li> contert:""</li>
+                            <li>::before 在前面加标签</li>
+                            <li>：empty 选择空标签</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>属性设置<span class="badge"></span></h5>
+                        <ul>
+                            <li>data-my-name="itcast"，获取Node.dataset['myName']</li>
+                            <li>1、Node.classList.add('class') 添加class</li>
+                            <li>2、Node.classList.remove('class') 移除class</li>
+                            <li>3、Node.classList.toggle('class') 切换class，有则移除，无则添加</li>
+                            <li>4、Node.classList.contains('class') 检测是否存在class</li>
+                            <li>Node指一个有效的DOM节点，是一个统称。</li>
+                            <li>1、document.getElementsByClassName ('class') 通过类名获取元素，以类数组形式存在。</li>
+                            <li>2、document.querySelector(‘div’) 通过CSS选择器获取元素，符合匹配条件的第1个元素。</li>
+                            <li>3、document.querySelectorAll('selector') 通过CSS选择器获取元素，以伪数组形式存在。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>form 表单
+                            <span class="badge"></span></h5>
+                        <ul>
+                            <li>API
+                                <ul>
+                                    <li>    &lt;header头部 &gt;</li>
+                                    <li>    &lt;nav导航 &gt;</li>
+                                    <li>    &lt; section部门 &gt;</li>
+                                    <li>    &lt; aside侧边栏 &gt;</li>
+                                    <li>    &lt; article文章 &gt;</li>
+                                    <li>    &lt;footer底部 &gt;</li>
+                                </ul>
+                            </li>
+                            <li>选择器
+                                <ul>
+                                    <li>E[attr] 存在attr属性即可</li>
+                                    <li>E[attr=val] 属性值完全等于val</li>
+                                    <li>E[attr*=val] 属性值里包含val字符并且在“任意”位置</li>
+                                    <li>E[attr^=val] 属性值里包含val字符并且在“开始”位置</li>
+                                    <li>E[attr$=val] 属性值里包含val字符并且在“结束”位置</li>
+                                </ul>
+                            </li>
+                            <li>
+                                input 内型
+                                <ul>
+                                    <li>&lt;legend&gt; 表单类型</li>
+                                    <li>novalidate &lt;form novalidate&gt; 关闭验证</li>
+                                    <li>placeholder &lt;input type="text" placeholder="请输入用户名"&gt; 占位符</li>
+                                    <li>autofocus &lt;input type="text" autofocus&gt; 自动获得焦点</li>
+                                    <li>multiple &lt;input type="file" multiple> 多文件上传</li>
+                                    <li>autocomplete &lt;input type="text" autocomplete="off"&gt; 自动完成</li>
+                                    <li>form &lt;input type="text" form="某表单ID"&gt;    </li>
+                                    <li>novalidate &lt;form novalidate&gt;</form>    关闭验证</li>
+                                    <li>required &lt;input type="text" required&gt; 必填项</li>
+                                    <li>pattern &lt;input type="text" pattern="\d"&gt; 自定义验证</li>
+                                    <li>email 输入邮箱格式</li>
+                                    <li>tel 输入手机号码格式</li>
+                                    <li>url 输入url格式</li>
+                                    <li>number 输入数字格式</li>
+                                    <li>search 搜索框（体现语义化）</li>
+                                    <li>range 自由拖动滑块</li>
+                                    <li>color 拾色器</li>
+                                    <li></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <div>
+                        <h5> 拖拽<span class="badge"></span></h5>
+                        <ul>
+                            <li>需要设置拖拽：draggable="true"</li>
+                            <li> ondragstart: 拖拽开始</li>
+                            <li> ondragend:拖拽结束</li>
+                            <li> ondragleave: 当鼠标拖拽离开 被拖拽元素时</li>
+                            <li> ondrag:　当拖拽时，持续触发</li>
+                            <li> ondragenter:当被拖拽元素进入目标元素时</li>
+                            <li> ondragleave:当鼠标进入目标元素时</li>
+                            <li> ondragover: 当被拖拽元素在目标元素上时，持续触发</li>
+                            <li> --> e.preventDefault(); 阻止拖拽的默认行为；</li>
+                            <li> ondrop:当在目标元素上松开鼠标时触发；</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> FileReader对象<span class="badge"></span></h5>
+                        <ul>
+                            <li>属性：result文件读取的结果</li>
+                            <li>事件：onload文件读取结束</li>
+                            <li>readAsText()：将文件以文本方式读取，读取的结果为这个文本文件中的内容。</li>
+                            <li>readAsDataURL()： 以URL的形式读取文件信息。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>web存储<span class="badge"></span></h5>
+                        <ul>
+                            <li> cookie : 4k 解析复杂</li>
+                            <li>window.sessionStorage 会话存储在同一个窗口下数据可以共享</li>
+                            <li>sessionStorage约5M 会话存储</li>
+                            <li> window.localStorage 永久生效，除非手动删除</li>
+                            <li> localStorage.setItem(key, value) 保存设置内容</li>
+                            <li> getItem(key) 读取存储内容</li>
+                            <li> removeItem(key) 删除键值为key的存储内容</li>
+                            <li> clear() 清空所有存储内容</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>地理定位API<span class="badge"></span></h5>
+                        <ul>
+                            <li>navigator.geoloaction.getCurrentPosition(successCallback, errorCallback)获取当前地理信息</li>
+                            <li>position.coords.latitude纬度</li>
+                            <li> position.coords.longitude经度</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>音频audio <span class="badge"></span></h5>
+                        <ul>
+                            <li> controls:控制条</li>
+                            <li> autoplay:自动发播放</li>
+                            <li> loop 循环播放</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>视频video<span class="badge"></span></h5>
+                        <ul>
+                            <li>paused: 视频的播放暂停状态</li>
+                            <li> duration:视频的总时长</li>
+                            <li> currentTime:当前播放时间</li>
+                            <li>play() 播放</li>
+                            <li> pause()暂停</li>
+                            <li> oncanplay： 当视频加载完成之后</li>
+                            <li> ontimeupdate: 当视频当前时间 改变之后触发</li>
+                            <li>全屏： video.webkitRequset Full Screen();</li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <div class="tab-pane" id="nav4">
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal"
+                            data-target="#myModa4">
+                        增加知识点
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade  bs-example-modal-lg" id="myModa4" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">增加内容</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">标题</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" placeholder="title">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">内容</label>
+                                            <span class="glyphicon-asterisk glyphicon glyphicon-plus"></span>
+
+                                            <div class="col-sm-10 add-input">
+                                                <input type="text" class="form-control" placeholder="1">
+                                                <input type="text" class="form-control" placeholder="2">
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="button" class="btn btn-primary">确认增加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+
+                    <div>
+                        <h5> BOM 浏览器对象模型<span class="badge"></span></h5>
+                        <ul>
+                            <li> 定时器
+                                <ul>
+                                    <li> setTimeout 间隔持行一次</li>
+                                    <li> clearTimeout 清除定时器</li>
+                                    <li> setInterval() 间隔循环持行</li>
+                                    <li> clearInterval 清除定时器</li>
+                                </ul>
+                            </li>
+
+
+                            <li> window 操作
+                                <ul>
+                                    <li> onload 元素渲染之后执行</li>
+                                    <li> window.open(URL) 在新的窗口打开 默认</li>
+                                    <li> .location 浏览器地址</li>
+                                    <li> window.close 关闭窗口</li>
+                                </ul>
+                            </li>
+
+                            <li> 获取属性
+                                <ul>
+                                    <li> Offset 偏移量
+                                        <ul>
+                                            <li> offsetWidth (border+padding +width)</li>
+                                            <li> offsetHeight (border +padding +height)</li>
+                                            <li> offsetleft 父级无定位,body为准</li>
+                                            <li> offsetParent 获取离自己最近的父级元素</li>
+                                        </ul>
+                                    </li>
+                                    <li> window.getComputedStyle(obj,false)[attr] 给出所有 CSS 属性的值</li>
+                                    <li> currentStyle 获取指定属性</li>
+                                </ul>
+                            </li>
+
+
+                            <li> window 的三个事件
+                                <ul>
+                                    <li> onscroll 滚动
+                                        <ul>
+                                            <li> scrollWidth 内边距+内宽度</li>
+                                            <li> scrollTop 页面卷去的头部 left</li>
+                                            <li> scrollHeight 内边距+内容超出的</li>
+                                            <li> document.documentElement.scrolltop 滚动盖住的部分</li>
+                                        </ul>
+                                    </li>
+                                    <li> onclient 客户端 或可视区
+                                        <ul>
+                                            <li> clientLeft 左边框</li>
+                                            <li> clienttop 上边框</li>
+                                            <li> clentHeight 包括边框和滚动条</li>
+                                            <li> clienWidth 不包括边框和滚动条</li>
+                                        </ul>
+                                    </li>
+                                    <li> onresize 浏览器大小改变触发事件</li>
+
+                                </ul>
+                            </li>
+
+
+                            <li> 取值
+                            <li> e.clientX e.clientY 浏览器可视区为基准</li>
+                            <li> pageX pageY 页面的左上角为基准 IE8不支持</li>
+                            <li> screenX screenY 以屏幕左上角为基准</li>
+                            <li> Offset 偏移量 (边框以内)
+                                <ul>
+                                    <li> offsetWidth (border+padding +width)</li>
+                                    <li> offsetHeight (border +padding +height)</li>
+                                    <li> offsetleft 父级无定位,body为准</li>
+                                    <li> offsetParent 获取离自己最近的父级元素</li>
+                                </ul>
+                            </li>
+
+                            </li>
+
+
+                            <li> 浏览器和屏幕各种高度宽度
+                                <ul>
+                                    <li> document.body.clientHeight //网页可见区域高(body)</li>
+                                    <li> document.body.offsetWidth //网页可见区域宽(body)，包括border、margin等</li>
+                                    <li> document.body.scrollWidth //网页正文全文宽，包括有滚动条时的未见区域</li>
+                                    <li> document.body.scrollTop //网页被卷去的Top(滚动条)</li>
+                                    <li> window.screenTop //浏览器距离Top</li>
+                                    <li> window.screen.height //屏幕分辨率的高</li>
+                                    <li> window.screen.availHeight //屏幕可用工作区的高</li>
+                                    <li>documentElement.clientWidth ==> 可见区域宽度</li>
+
+                                </ul>
+                            </li>
+
+                            <li> 另一种事件的设置
+                                <ul>
+                                    <li> obj.addEventListener(type,listener,false) 绑定事件 支持冒泡 IE8不支持 true 支持捕获从祖先到目标</li>
+                                    <li> obj.attachEvent('on'+type,listener)IE8倒叙触发</li>
+                                    <li> e.stopPropagation( ) 阻止广播冒泡 IE8不支持</li>
+                                    <li> cancelBubble =true; 取消冒泡 是的</li>
+                                    <li> preventDefault() 阻止默认行为 IE8不支持 或 return false;</li>
+                                    <li> returnValue 阻止默认行为 IE8支持</li>
+                                    <li> e.eventPhase 查看当前处什么位置 1 捕获2 目标3 冒泡</li>
+                                    <li> e.target 目标</li>
+                                    <li> e.srcElement 最原始目标</li>
+                                    <li> Location.href ="/跳转到页面"</li>
+                                    <li> history.forward ( ) 前进 或者 history.go(1)</li>
+                                    <li> window.history.back( ) 后退 或者 history.go(-1)</li>
+                                    <li> bind("mouseenter mouseleave", function(){ });</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> 数组的设置<span class="badge"></span></h5>
+                        <ul>
+                            <li> indexof 查询数组的值往后找</li>
+                            <li> lastIndexOf 往前找</li>
+                            <li> .concat() 合并数组</li>
+                            <li> .join( ) 数组的连接字符串</li>
+                            <li> .push()在数组最后面加数据</li>
+                            <li> .pop()删除最后一个数据</li>
+                            <li> .unshift() 在数组最前面增加数据</li>
+                            <li> .shift() 在数组最前面删除数据</li>
+                            <li> reverse() 将数组反转</li>
+                            <li> sort(); 字符按ASCII码从小到大排序</li>
+                            <li> splice(1,2,c) 两个参数是删除,三个是替换</li>
+                            <li> filter (item,index)过滤 false 为去掉</li>
+                            <li> valueOf() 获取数组本身</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>string<span class="badge"></span></h5>
+                        <ul>
+                            <li>charAt() 指定位置的字符</li>
+                            <li>charCodeAt() 制定索引位置上的ASCII码</li>
+                            <li>slice(start,end) 从start索引的位置开始，截取到end位置，end取不到,end为负数的时候剪掉后面的end数个</li>
+                            <li>substring() 从start位置开始，截取到end位置，end取不到,end负数的情况为 0</li>
+                            <li>substr() 从start位置开始，截取end个字符，只有一个就参数就截取到最后 ,负数的时候为空</li>
+                            <li>toUpperCase() 转换大写</li>
+                            <li>toLowerCase() 转换小写</li>
+                            <li>searchBalue 查询字符</li>
+                            <li>replace(/start/g,value) 替换字符 ,g表示global 全局</li>
+                            <li>split("") 用空文本分割成数组</li>
+                            <li>forEach 遍历数组每一项</li>
+                            <li>index 数组的索引</li>
+                            <li>item 数组的每一项</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> 正则字符的转义<span class="badge"></span></h5>
+                        <ul>
+                            <li> \n 换行</li>
+                            <li> \t 缩进</li>
+                            <li> \b 空格</li>
+                            <li> \r 回车</li>
+                            <li> \\ 斜杠</li>
+                            <li> \' 单引号</li>
+                            <li> \" 双引号</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Regular Expression 认证规则: / / .test( )<span class="badge"></span></h5>
+                        <ul>
+                            <li> \d 认证有无数字,false没有</li>
+                            <li>\. 除了换行和回车的任意字符</li>
+                            <li> \D 非数字字符</li>
+                            <li>\s 不可见字符</li>
+                            <li> \S 可见字符</li>
+                            <li> \w 单词字符(所有的字母数字和-_)</li>
+                            <li> \W 非单词字符 有一个不是字母和数字和 -</li>
+                            <li>| 或</li>
+                            <li>[ ] 任意一个</li>
+                            <li>[^ ] 取反</li>
+                            <li>[ $] 与在一起</li>
+                            <li>//gi 全局匹配忽略大小写</li>
+                            <li>/^\d/ 以数字开头 * 0次以上+ 1次以上? 0次或1次$ 以结尾</li>
+                            <li>{ n } 连续出现n次</li>
+                            <li>{ n , } 至少出现n次</li>
+                            <li>{ n , m } n到m次</li>
+                            <li>/ /g 全局</li>
+                            <li>exec( ) 只能匹配一个</li>
+                            <li>var arr = str.match ( obj ); RegExp.$1 匹配第一项</li>
+                            <li>replace 替换 "$1==$2" 第一项替换第二项</li>
+                            <li>search 字符串中的索引</li>
+                            <li>[\u4e00-\u9fa5] 汉字</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>逻辑语<span class="badge"></span></h5>
+                        <ul>
+                            <li> && 并且</li>
+                            <li> ！ 非</li>
+                            <li> || 或者</li>
+                            <li> % 取余</li>
+                            <li> toString() 双引号</li>
+                            <li> if ( ){....}else{.....} 如果否则</li>
+                            <li> if( a=="60" && a=="70") 等于并且</li>
+                            <li> if( ){ " ")} 如果就</li>
+                        </ul>
+
+                    </div>
+                    <div>
+                        <h5>数值应用<span class="badge"></span></h5>
+                        <ul>
+                            <li> 取值 Math.
+                                <ul>
+                                    <li> ceil (x) 向上取整</li>
+                                    <li> floor 向下取整</li>
+                                    <li> （max） 最大值</li>
+                                    <li> min 最小值</li>
+                                    <li> random 0~1随机数字</li>
+                                    <li> pow(x,y) x的y次方</li>
+                                    <li> round 四舍五入</li>
+                                    <li> sin30 = * PI /6</li>
+                                    <li> abs 绝对值</li>
+                                </ul>
+                            </li>
+
+                            <li> 显示转换
+                                <ul>
+                                    <li> Number(数字)</li>
+                                    <li> parseInt(去掉小数)</li>
+                                    <li> parseFloat（保留小数）</li>
+                                    <li> String(转换成字符串)</li>
+                                    <li> .toString()</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <div>
+                        <h5>DOM 文档对象模型<span class="badge"></span></h5>
+                        <ul>
+                            <li>DOM事件
+                                <ul>
+                                    <li>onclick 鼠标单机</li>
+                                    <li>onmouseup 鼠标放开</li>
+                                    <li>ondblclick 鼠标双击</li>
+                                    <li>onfocus 获得焦距</li>
+                                    <li>onblur 失去焦距</li>
+                                    <li>onload 网页文档加载事件</li>
+                                    <li>onsubmit 表单提交事件</li>
+                                    <li>onceydown 键盘按下触发</li>
+                                    <li>keyCode</li>
+                                    <li>onkeyup 放开键盘后触发</li>
+                                    <li>onmouseover 鼠标悬停</li>
+                                    <li>onmouseout 鼠标移出</li>
+                                    <li>onmousedown 鼠标按住触发</li>
+                                    <li>onmousemove 鼠标移动触发</li>
+                                    <li>onmouseenter 鼠标移入</li>
+                                    <li>onmousewheel 滚轮滚动</li>
+                                </ul>
+                            </li>
+                            <li>
+                                节点属性
+                                <ul>
+                                    <li>1 element (节点元素)</li>
+                                    <li>2 attribute (标签节点)</li>
+                                    <li>3 TEXT_NODE (文本)</li>
+                                    <li>4 CDATASection (空白节点)</li>
+                                    <li>8 COMMENT_NODE (注释)</li>
+                                    <li>9 document (文档)</li>
+                                    <li>10 documenttype (文档内型)</li>
+                                    <li>12 notation 符号</li>
+                                    <li>nodeName 节点名称</li>
+                                    <li>nodeValue 节点值</li>
+                                </ul>
+                            </li>
+                            <li>
+                                设置节点
+                                <ul>
+                                    <li>cloneNode(true '克隆标签和内容'/false'克隆标签')</li>
+                                    <li> replaceChild(a,b) a替换b</li>
+                                    <li> insertBefore 插入节点</li>
+                                    <li> appendChild(剪切) 追加</li>
+                                    <li> removeChild 父节点删除子节点</li>
+                                    <li> createElement 创建元素</li>
+                                    <li> setAttribute ("","") 增加属性名称和值</li>
+                                    <li> removeAttribute ("") 去掉属性名</li>
+                                    <li> getAttribute 获得自定义属性值</li>
+                                </ul>
+                            </li>
+                            <li>
+                                获取节点标签
+                                <ul>
+                                    <li>nexSibling 下一个等级节点 IE8 会忽略空白节点</li>
+                                    <li>nextElememtsSibling 下个等级标签</li>
+                                    <li>previousSibling 上一个等级节点 IE8会忽略空白文本</li>
+                                    <li>previousElementSibling 上个等级标签</li>
+                                    <li>firstChild 获得子元素第一个标签和文本节点 ie8忽略空白文本</li>
+                                    <li>firstElementChild 获得子元素第一个标签</li>
+                                    <li>lastChild 子元素最后一个节点 IE8忽略空文本</li>
+                                    <li>lastElementChild 子元素最后一个标签</li>
+                                    <li>parentNode 父标签文本</li>
+                                    <li>childNodes 子所有节点</li>
+                                    <li>children 子标签</li>
+                                    <li>文本
+                                        <ul>
+                                            <li>innerText 文本内容</li>
+                                            <li>function getText (ele){}</li>
+                                            <li>innerHTML</li>
+                                            <li>textContent</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>获取标签<span class="badge"></span></h5>
+                        <ul>
+                            <li>getElementsBytagName 获得标签名</li>
+                            <li>getElementById 获得id</li>
+                            <li>getElementsByClassName 获得内名</li>
+                            <li>disabled 设置禁用</li>
+                            <li>opacity: 0.3 背景透明 filter:alpha(opacity=30); IE8的支持</li>
+                            <li>return false 取消跳转</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> 事件样式
+                            <san class="badge"></san>
+                        </h5>
+                        <ul>
+                            <li>document.write ("") 在body输出内容</li>
+                            <li>console.log(“后台显示”)</li>
+                            <li> “弹框内容” )</li>
+                            <li>prompt("弹框对话框")</li>
+                            <li>confirm（“确认框”）</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>typeof “数值类型判断”<span class="badge"></span></h5>
+                        <ul>
+                            <li> number 数值 NaN 数值中的“不是数值”</li>
+                            <li> string 字符串</li>
+                            <li> boolean 布尔类型</li>
+                            <li> underined 默认原始值</li>
+                            <li> null 空</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>循环语句<span class="badge"></span></h5>
+                        <ul>
+                            <li> while</li>
+                            <li> for</li>
+                            <li> {break} 停止</li>
+                            <li> {continue} 跳过</li>
+                            <li> do-while</li>
+                            <li> ？：； 三元表达式</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="nav5">
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal"
+                            data-target="#myModa5">
+                        增加知识点
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade  bs-example-modal-lg" id="myModa5" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabe5">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">增加内容</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">标题</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" placeholder="title">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">内容</label>
+                                            <span class="glyphicon-asterisk glyphicon glyphicon-plus"></span>
+
+                                            <div class="col-sm-10 add-input">
+                                                <input type="text" class="form-control" placeholder="1">
+                                                <input type="text" class="form-control" placeholder="2">
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="button" class="btn btn-primary">确认增加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+
+                    <div>
+                        <h5> 选择器
+                            <span class="badge"></span></h5>
+                        <ul>
+                            <li> 过滤选择
+                                <ul>
+                                    <li> $("tr : even") 所有偶数 tr 元素</li>
+                                    <li> $("tr : odd") 所有奇数 tr 元素</li>
+                                    <li> $("p : first") 第一个 p 元素</li>
+                                    <li> $("p : last") 最后一个 p 元素</li>
+                                    <li> $("p").eq(1) 获取第n个元素</li>
+                                    <li> $(" li : gt (n) ") 大于n的元素</li>
+                                    <li> $(" li : lt (n) ") 小于的元素</li>
+                                    <li> $("" ).filter(".intro") 选择带intro类</li>
+                                    <li> $(":input") 所有 input 元素</li>
+                                    <li> .not(".intro") 去掉带intro类</li>
+                                    <li> $( ).find("span"); //获取所有的后代元素</li>
+                                </ul>
+                            </li>
+                            <li> 同级选择器
+                                <ul>
+                                    <li> $(selector).siblings() //所有的兄弟节点</li>
+                                    <li> next() //下一个兄弟节点</li>
+                                    <li> nextAll() //后面的所有节点</li>
+                                    <li> prev() //前面一个的兄弟节点</li>
+                                    <li> prevAll() //前面的所有的兄弟节点</li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> on 事件设置<span class="badge"></span></h5>
+                        <ul>
+                            <li> bind</li>
+                            <li> delegate( 支持给动态创建元素)</li>
+                            <li> $(selector).on("click","span", function() {});</li>
+                            <li> unbind('指定事件' ) 解绑事件</li>
+                            <li> undelegate（'指定事件'）；解绑所有delegate的事件</li>
+                            <li> triggerHandler('focus');触发的事件不包括默认的行为</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>动态设置<span class="badge"></span></h5>
+                        <ul>
+                            <li> .hide(1000, function(){}); 让匹配元素隐藏掉</li>
+                            <li> .show(2000); 显示 ( slow 200 normal 400 fast 600)</li>
+                            <li> .slideDown(1000); 时间 让元素以下拉动画效果展示出来</li>
+                            <li> .slideUp( ); 作用：让元素以上拉动画效果隐藏起来</li>
+                            <li> slideToggle() 滑入滑出切换动画效果</li>
+                            <li> .fadeIn(1000,0.4 ); 让元素以淡淡的进入视线的方式展示出来</li>
+                            <li> .fadeOut(1000); 让元素以渐渐消失的方式隐藏起来</li>
+                            <li> .fadeToggle(); 通过改变不透明度，切换匹配元素的显示或隐藏状态</li>
+                            <li> .fadeTo(1000, .5); // 时长 透明</li>
+                            <li> stop( ).animate
+                                <ul>
+                                    <li> ( { } , 2000 , 'linear' ) 均速运动</li>
+                                    <li> ( { } , 2000 , 'swing' ) 速度曲线运动</li>
+                                </ul>
+                            </li>
+                            <li> css({"color": "red", "font-size": "30px"}); 设置多个样式</li>
+                            <li> each 隐式迭代的遍历</li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <h5> event <span class="badge"></span></h5>
+                        <ul>
+                            <li> e.currentTarget 触发事件源</li>
+                            <li> e.preventDefault( ) 取消默认行为</li>
+                            <li> e.type 事件内型</li>
+                            <li> e.stopPropagation 阻止冒泡</li>
+                            <li> e.which( ) 鼠标按键</li>
+                            <li> e.keyCode 键盘按键</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h5> 取值 <span class="badge"></span></h5>
+                        <ul>
+                            <li> position( ).left( ) 以margin外为主的</li>
+                            <li> offset( ).left( )border 外的距离</li>
+                            <li> offsetparent() 最近定位祖先</li>
+                            <li> scrollleft 左被滚盖的位置</li>
+                            <li> width() 获取的是content的宽度</li>
+                            <li> innerWidth() 获取的是content+padding的宽度</li>
+                            <li> outerWidth() 获取的是content+padding+border 的宽度</li>
+                            <li> outerWidth(true) 获取的是content+padding+border+margin的宽度</li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <h5> 取屏幕值 <span class="badge"></span></h5>
+                        <ul>
+                            <li> $(window).height() //浏览器当前窗口可视区域高度</li>
+                            <li> $(document).height() //浏览器当前窗口文档的高度</li>
+                            <li> $(document.body).height() //浏览器当前窗口文档body的高度</li>
+                            <li> $(document.body).outerHeight(true) //浏览器当前窗口文档body的总高度 包括border padding margin</li>
+                            <li> $(window).width() //浏览器当前窗口可视区域宽度</li>
+                            <li> $(document).width() //浏览器当前窗口文档对象宽度</li>
+                            <li> $(document.body).width() //浏览器当前窗口文档body的宽度</li>
+                            <li> $(document.body).outerWidth(true) //浏览器当前窗口文档body的总宽度 包括border padding margin</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> class的四种操作<span class="badge"></span></h5>
+                        <ul>
+                            <li> toggleClass() 切换</li>
+                            <li> hasClass() 判断是否有</li>
+                            <li> removeClass() 删除</li>
+                            <li> addClass() 增加</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> 节点设置 <span class="badge"></span></h5>
+                        <ul>
+                            <li> clone( )深度克隆 true 可以克隆事件</li>
+                            <li> .append( )子元素的最后面追加</li>
+                            <li> .appendTo( )</li>
+                            <li> val( )获取表单内容</li>
+                            <li> .prepend() 子前面追加</li>
+                            <li> empty( )删除子元素</li>
+                            <li> .html("") 删除子元素</li>
+                            <li> remove( ) 自我删除</li>
+                            <li> attr( ) 获取设置属性</li>
+                            <li> prop 原型属性 ( [proptype)</li>
+                            <li> $(window).width ( )浏览器的宽度</li>
+                            <li> scrollTop 页面卷去</li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+                <div class="tab-pane" id="nav6">
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal"
+                            data-target="#myModa6">
+                        增加知识点
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade  bs-example-modal-lg" id="myModa6" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">增加内容</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">标题</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" placeholder="title">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">内容</label>
+                                            <span class="glyphicon-asterisk glyphicon glyphicon-plus"></span>
+
+                                            <div class="col-sm-10 add-input">
+                                                <input type="text" class="form-control" placeholder="1">
+                                                <input type="text" class="form-control" placeholder="2">
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="button" class="btn btn-primary">确认增加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <div>
+                        <h5> TouchEvent对象<span class="badge"></span></h5>
+                        <ul>
+                            <li> Touches: 位于屏幕上的所有手指的列表</li>
+                            <li> targetTouches: 位于该元素上的所有手指的列表</li>
+                            <li> changedTouches：只会记录最后一次改变的数据</li>
+                            <li> touchstart: 手指触摸屏幕时触发</li>
+                            <li> touchmove: 手指在屏幕上移动时触发</li>
+                            <li> touchend: 手指离开屏幕时触发</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> e.targetTouches[0].<span class="badge"></span></h5>
+                        <ul>
+                            <li> clientX:触摸目标在视口中的X坐标。</li>
+                            <li> clientY:触摸目标在视口中的Y坐标。</li>
+                            <li> pageX：触摸目标在页面中的x坐标。</li>
+                            <li> pageY：触摸目标在页面中的y坐标。</li>
+                            <li> screenX:触摸目标在屏幕中的x坐标。</li>
+                            <li> screenY:触摸目标在屏幕中的y坐标。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> Carousel 控制<span class="badge"></span></h5>
+                        <ul>
+                            <li> $(.carousel）.carousel('prev')切换到上张</li>
+                            <li> $(.carousel）.carousel('next')切换到第下张</li>
+                            <li> $(.carousel）.carousel(n) 切换到第n张</li>
+                            <li> $(.carousel）.carousel('pause') 暂停</li>
+                            <li> $(.carousel）.carousel('cycle') 轮播</li>
+                        </ul>
+                    </div>
+                      <div>
+                        <h5> 视口 &lt; meta<span class="badge"></span></h5>
+                        <ul>
+                            <li> 快捷键 meta:vp+tab</li>
+                            <li> name='viewport'</li>
+                            <li> width=device-width: 视口的宽度=设备的宽度</li>
+                            <li> initial-scale=1.0 页面初始缩放比例1.0</li>
+                            <li> maximum-scale=1.0 最大缩放比例1.0</li>
+                            <li> minimum-scale=1.0 最小缩放比例是1.0</li>
+                            <li> user-scalable=no 禁止用户手动缩放页面</li>
+                            <li> touchstart：当手指触碰屏幕时候发生</li>
+                            <li> touchmove：当手指在屏幕上滑动时连续触发</li>
+                            <li> touchend 手指离开时候</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> style<span class="badge"></span></h5>
+                        <ul>
+                            <li> -webkit</li>
+                            <li> -tap-highlight-color: 点击高亮属性</li>
+                            <li> -box-sizing:border-box 以边框计算</li>
+                            <li> -appearance:none 清除表单样式</li>
+                            <li> font-family: "microsoft yahei",sans-serif; 默认字体</li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+                <div class="tab-pane" id="nav7">
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal"
+                            data-target="#myModa7">
+                        增加知识点
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade  bs-example-modal-lg" id="myModa7" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">增加内容</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">标题</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" placeholder="title">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">内容</label>
+                                            <span class="glyphicon-asterisk glyphicon glyphicon-plus"></span>
+
+                                            <div class="col-sm-10 add-input">
+                                                <input type="text" class="form-control" placeholder="1">
+                                                <input type="text" class="form-control" placeholder="2">
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="button" class="btn btn-primary">确认增加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <div>
+                        <h5> 创建对象 <span class="badge"></span></h5>
+                        <ul>
+                            <li> 字面量</li>
+                            <li> 构造函数</li>
+                            <li> 工厂模式</li>
+                            <li> return 返回数据跳出函数</li>
+                            <li> n1=n1||0; 短路预算</li>
+                            <li> arguments 伪数组，用来存储函数执行时，所有传入的实参</li>
+                            <li> constructor:Person 保存person数据</li>
+                            <li> arguments.callee 属性包含当前正在执行的函数。</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>  原型 <span class="badge"></span></h5>
+                        <ul>
+                            <li> 原型 就是 函数的prototype属性所指向的对象  (获取函数的方式)</li>
+                            <li> 原型 具有construtor属性 指向 函数</li>
+                            <li> object 是constructor 的原型函数</li>
+                            <li> __proto__属性兼容处理 (获取函数的方式)</li>
+                            <li> arguments: 伪数组对象，用来存储函数执行时，所有传入的实参。</li>
+                            <li> length:传人实参的个数</li>
+                            <li> concat	合并数组</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>  函数 <span class="badge"></span></h5>
+                        <ul>
+                            <li> 普通函数执行模式</li>
+                            <li> 构造函数执行模式</li>
+                            <li> 方法执行模式</li>
+                        </ul>
+                    </div>
+                     <div>
+                        <h5> 上下文模式this的改变 <span class="badge"></span></h5>
+                        <ul>
+                            <li> call	通过可选的形参列表 给函数传入实参</li>
+                            <li> apply	通过可选的数组对象 给函数 传入实参</li>
+                        </ul>
+                    </div>
+                   <div>
+                        <h5> ES5方法 <span class="badge"></span></h5>
+                        <ul>
+                            <li> 属性
+                                <ul>
+                                    <li> Object.defineProperties	用来重新定义多个对象的属性</li>
+                                    <li> writalbe: false, // 可写性 如果为false 表示该属性 是只读的</li>
+                                    <li> enumerable: false, // 可以通过for in遍历到的属性 是 可枚举的</li>
+                                    <li> configurable: false // 如果该属性值为false，在重新配置对象属性的 writalbe enumerable configurable就会报错</li>
+                                    <li> 所有函数都是Function的实例</li>
+                                </ul>
+                            </li>
+                            <li> 经典继承	Object.create( parent, [对象] );</li>
+                            <li> 方法
+                                <ul>
+                                    <li> constructor:Person 保存person数据</li>
+                                    <li> Object.defineProperty		用来重新定义对象的属性</li>
+                                    <li> bind 	需要创建新函数调用持行</li>
+                                    <li> hasOwnProperty 	判断属性是否本身具有的</li>
+                                    <li> property	判断属性是否本身具有的</li>
+                                    <li> isPrototypeOf		判断一个对象是否是宁一个对象的原型</li>
+                                    <li> propertyIsEnumerable	判断属性是否本身的并且可枚举的</li>
+                                    <li> caller 返回最终持行的上级函数的引用</li>
+                                    <li> callee返回正在执行的函数本身的引用，它是arguments的一个属性</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+
+
+                </div>
+                <div class="tab-pane" id="nav8">
+                    <button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal"
+                            data-target="#myModa8">
+                        增加知识点
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade  bs-example-modal-lg" id="myModa8" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">增加内容</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">标题</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" placeholder="title">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">内容</label>
+                                            <span class="glyphicon-asterisk glyphicon glyphicon-plus"></span>
+
+                                            <div class="col-sm-10 add-input">
+                                                <input type="text" class="form-control" placeholder="1">
+                                                <input type="text" class="form-control" placeholder="2">
+                                            </div>
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="button" class="btn btn-primary">确认增加</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <div>
+                        <h5>基本绘图命令 <span class="badge"></span></h5>
+                        <ul>
+                            <li> var context = canvas.getContext( '2d' );	 获得 CanvasRenderingContext2D 对象</li>
+
+                            <li> 绘制立体图形使用 'webgl'</li>
+                            <li> 设置开始绘图的位置: .moveTo( x, y ).</li>
+                            <li> 设置直线到的位置: .lineTo( x, y ).</li>
+                            <li> 描边绘制: .stroke().</li>
+                            <li> 填充绘制: context.fill().</li>
+                            <li> strokeStyle	描边颜色</li>
+                            <li> fillStyle 	设置填充颜色</li>
+                            <li> .strokeRect(  x, y, w,h );		绘制矩形框</li>
+                            <li> .fillRect( x, y, w, h );		绘制填充矩形</li>
+                            <li> .clearRect( x, y, w, h );		清除指定绘图</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5> 绘制圆弧<span class="badge"></span></h5>
+                        <ul>
+                            <li> 起始路劲:    .beginPath();</li>
+                            <li> 绘制圆弧路劲.arc( x, y, r, start angle,  end angle,  anticlockwise );</li>
+                            <li> 闭合路径: .closePath().</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>  绘制文本<span class="badge"></span></h5>
+                        <ul>
+                            <li> strokeText( 'text', x,y, [ ]); 绘制描边文字点位基点</li>
+                            <li> .fillText( 'Hello JK', X, Y ); 文字和定位基点</li>
+                            <li> .font = 'bold 50px 黑体';</li>
+                            <li> .textAlign = 'center';  文本位置</li>
+                            <li> .textBaseline	文本属性
+                                <ul>
+                                    <li> top</li>
+                                    <li> bottom</li>
+                                    <li> middle 基点中心</li>
+                                    <li> hanging</li>
+                                    <li> alphabetic</li>
+                                    <li> ideographic</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+
+
+                </div>
+                <!--<div class="tab-pane" id="nav8">8</div>-->
+            </div>
+        </div>
+        <div class="loading"></div>
+
+    </div>
+
+
+</div>
+
+
+<!-- 注意： bootstrap框架 依赖于 jquery  务必先引入-->
+<script src="lib/jquery/jquery.min.js"></script>
+<!-- Bootstrap的核心js -->
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/template-native.js"></script>
+<!--引入自己的js-->
+<script src="js/index.js"></script>
+<script type="text/template" id="tmp">
+    <% for( var i=0;i<list.length;i++){ %>
+    <li class="col-md-2 col-sm-12">
+        <a href="#nav<%= 9+i %>" data-toggle="tab">
+            <%= list[i].name %>
+                        <span class='delete glyphicon glyphicon-remove pull-right col-xs-6 col-sm-1'
+                              data-id='<%= list[i].id %>'>
+                           </span>
+        </a>
+
+    </li>
+    <%  } %>
+</script>
+<script>
+
+</script>
+</body>
+
+</html>
