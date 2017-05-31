@@ -1,18 +1,14 @@
 $(function () {
     var btn = $('.btn-primary'),
-        liLast = btn.parent(),
+        //liLast = btn.parent(),
         find = $('.nav-tabs').html(),
         content = $('.tab-content').html(),
         base = $('#save'),
-        sm = $('.glyphicon-asterisk'),
-        html = sm.next().html(),
-        length = sm.next().children().length;
-
+        sm = $('.glyphicon-asterisk');
+        //length = sm.next().children().length;
     $('.form-group').css({ 'width': '100%' });
-
-    // console.log(find);
+    var length3 = 2;
     render(); //重新加载第一页的数据
-    addStr();  //增加内容条
 
     //  点击标题跳转页面
     $('.nav-tabs').on('click', '.active', function () {
@@ -78,16 +74,6 @@ $(function () {
     };
 
 
-// 增加内容条
-    function addStr() {
-    $('.tab-content').on('click', '.glyphicon-asterisk', function () {
-        length += 1;
-        var str = '<input type="text" class="form-control" placeholder="' + length + '">';
-        html += str;
-        $('.add-input').html(html);
-        return str;
-    });
-    };
 
     // 刷新页面
     function render(index) {
@@ -217,6 +203,23 @@ $(function () {
 
 
     });
+
+// 增加内容条
+        $('.tab-content').on('click', '.glyphicon-asterisk', function () {
+            console.log(length3);
+            length3 += 1;
+            var str = '<input type="text" class="form-control" placeholder="' + length3 + '">';
+            $('.add-input').append(str);
+        });
+
+    // 取消键
+      $('.tab-content').on('click','.modal-footer>.btn-default',function  (){
+          length3 = 2;
+          var html = sm.next().html();
+          $('.form-group>.add-input').html(html);
+          console.log($('.form-group>.add-input').html());
+
+      });
 
     // 徽章功能
     function inbox() {
